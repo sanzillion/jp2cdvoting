@@ -36,9 +36,9 @@ if(isset($_POST['search'])){
 	$html = '';
 	foreach ($result as $r) {
 		$html .= '<tr>
-						<td>'.$r->last_name.', '.$r->first_name.'</td>
-						<td>'.$r->ID_number.'</td>
-						<td>'.$r->passcode.'</td>
+						<td><input hidden name="name" value="'.$r->first_name.' '.$r->last_name.'">'.$r->last_name.', '.$r->first_name.'</td>
+						<td><input hidden name="course" value="'.$r->course.'">'.$r->ID_number.'</td>
+						<td><input hidden name="year" value="'.$r->year.'">'.$r->passcode.'</td>
 						<td>'.$r->course.'</td>
 						<td>'.$r->year.'</td>
 					</tr>';
