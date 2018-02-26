@@ -2,8 +2,8 @@
 
 	$sql = "SELECT DISTINCT votes.president, COUNT(*) as total, candidates.firstname, candidates.mi, candidates.lastname, candidates.partylist FROM votes INNER JOIN candidates ON votes.president = candidates.id_number GROUP BY president ORDER BY total DESC";
 	$query = mysqli_query($con, $sql);
-	$presidentCount = "";
-	$i = 1;
+	$presidentCount = ""; $i = 1;
+
 	while($row = mysqli_fetch_array($query)){
 		$idnum = $row["president"];
 		$count = $row["total"];
